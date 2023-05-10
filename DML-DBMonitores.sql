@@ -140,7 +140,7 @@ FROM     Monitores INNER JOIN
 -- 12. Contando a los monitores que son menores de edad --
 SELECT COUNT(*) AS Conteo FROM     Monitores INNER JOIN
                   Estudiantes ON Monitores.ID_estudiante = Estudiantes.ID_estudiante
-				  WHERE year(getdate()) - year(Estudiantes.FechaNac) like (1, 17)
+				  WHERE year(getdate()) - year(Estudiantes.FechaNac) < 18
 
 -- 13. Contando a los monitores que son mayores de edad --
 SELECT COUNT(*) AS Conteo FROM     Monitores INNER JOIN
